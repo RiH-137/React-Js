@@ -1,0 +1,201 @@
+1. For installing React, it is mandatory to have NodeJS in the system.
+
+2. npm --> utility tool
+
+3. creating the react template --> npx create-react-app first_app
+                                        "first_app" is the name of my application.
+
+
+4. the above will dowwnload React; React-DOM and React-Scripts with cra-template.
+
+5. start--> npm start                         
+
+6. default port --> 3000
+
+7. File Structure
+
+    a. node_module--> stores all the dependencies and installed packages like node; react dom etc for the particular project.
+    
+    b. public--> public is the actual file that acts as the output for the project.
+                    *index.html--> main output file.
+                    *menifest.json--> contains metadata about the project like logo; url; short url etc.
+                    
+
+    c. package.json--> This is the configuration file for the app. It contains 'name' of the application;
+                                                    'version'; 'dependencies'.
+                'package.json' just contains the name of the installed packages, but the actual code for the 
+                installed package is stored in the 'node_module' file.
+                eg., image 1.png
+                
+    
+    d. src (folder)--> Compilation in React start from the SRC folder.
+                * 'index.js' is the first file which is read by react inside the 'src' folder.
+                * App.js is the component that is render by the 'root' in the 'src/index.html' file.
+                
+
+
+------------------------------------------------------------------------------------------------------
+
+App 2
+1. deleted the 'src' folder  and redesign by ourselves.
+ 
+--------------------------------------------------------------------------------------------------------
+
+APP 3 --> React component
+ref.--> img2.png
+
+
+----------------------------------------------------------------------------------------------------------
+
+APP 4 --> JSX
+*JAVASCRIPT XML
+
+const name= 'RiH'
+const element= <h1> Hello, {name} </h1>
+
+
+*JAVASCRIPT in JSX
+
+function formatName(user){
+    return user.firstName + ' ' + user.lastName;
+}
+
+const user={
+    firstName:'RiH,
+    lastName: 'Man'
+}
+
+const element=(
+    <h1>
+        Hello, {formatName(user)}
+    </h1>
+)
+
+
+*Dynamic Attributes
+
+const linkURl="www.google.com";
+const element= <a href={linkURl} Click here </a>;
+
+
+---------------------------------------------------------------------------------------------------------
+
+APP 5 --> More about components
+
+for building various components we create a folder named 'components' inside the 'src' folder.
+for styling we create 'style.css' file inside the 'src' folder.
+
+
+*Props--> Props are like parameters to a fumction and used to make components generic.
+
+for example; 
+
+less generic function:
+function add(){
+    return 2+3;
+}
+
+
+more generic function:
+function add(a,b){
+    return a +  b;
+}
+
+
+How to use props in REACT?
+answer--> generally:
+
+function MyHeader(){
+    return <h1> Hello World </h1>
+}
+
+using props:
+function MyHeader(props){
+    return <h1> {props.title} </h1>
+}
+<MyHeader title="This is the Title" />
+
+
+----------------------------------------------------------------------------------------------------
+LifeCycle of react 'component' --> img B
+
+
+
+Hooks:- a hook is a special feature in React that lets you use additional functionality
+         in your components—like managing state (data) 
+        or triggering actions based on changes—without having to write a class.
+
+
+*useState Hook --> A state of a component is a 'variable' that holds some information that may change over
+                    the lifetime of the component.
+                 Whenenver the value of the state changes, the component re-render itself with update values.
+
+                 The useState hook is like a "variable with memory."
+                  It allows you to keep track of data (called state) that can change over time.
+                  For example, if you want to keep track of how many times a button is clicked, you can use useState. 
+
+
+            Let’s say you're building an e-commerce site, and you want to add a shopping cart feature 
+            where users can add or remove items, and you keep track of the total items in the cart.
+            You can use the useState hook in React to manage the state of items in the cart.
+
+
+1. import React, { useState } from 'react';
+2. function CounterComponent() {
+3.     const [count, setCount] = useState(0);
+4. 
+5.     return(
+6.         <div>
+7.             <p> Count is {Count} </p>
+8.             <button onClick = { () => setCount(count+1)} This is Increment Button </button>
+9.         </div>
+10.     )
+11. }
+
+in line 3, 'count' is a variable, which is dependent of 'setCount' named function.
+            'count' initially is 0.
+
+ref.--> App 5/todo/src/components/CounterComponent.JSX
+
+
+
+---------------------------------------------------------------------------------------------------------
+APP 6 --> Hook : useEffect
+
+
+useEffect:- Run code during the change in LifeCycle of a component.
+
+The useEffect hook in React is used to perform side effects in your components.
+A side effect is any action that affects something outside the scope of the function—like fetching data from an API,
+ updating the DOM, or setting up a subscription. In an e-commerce site, 
+you might use useEffect to fetch product data when the component loads or to update the cart
+ contents when the user adds or removes items.
+
+
+import React, { useEffect } from 'react';
+
+const MyComponent() {
+
+    useEffect( () => {
+
+        //code here
+        console.log('Hello, I am Hook');
+    }, [] )
+
+    return (
+        <div>
+            <p> Hey there </p>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
