@@ -180,7 +180,7 @@ const MyComponent() {
 
         //code here
         console.log('Hello, I am Hook');
-    }, [] )
+    }, [] )                                    // [] --> dependency list
 
     return (
         <div>
@@ -189,7 +189,8 @@ const MyComponent() {
     )
 }
 
-
+So, basically useEffect works when we ned to complete a task without any human button; automatic task 
+or update by itself
 
 
 
